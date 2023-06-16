@@ -1,0 +1,36 @@
+CREATE DATABASE TorreDeControlAerolinea;
+GO
+
+USE TorreDeControlAerolinea;
+GO
+
+CREATE TABLE Aeropuertos (
+    AeropuertoId INT IDENTITY(1,1) PRIMARY KEY,
+    Nombre VARCHAR(100),
+    LimiteAviones INT
+);
+GO
+
+CREATE TABLE Aviones (
+    AvionId INT IDENTITY(1,1) PRIMARY KEY,
+    AeropuertoSalidaId INT,
+    AeropuertoLlegadaId INT,
+    HoraSalida DATETIME2,
+    HoraAterrizaje DATETIME2,
+    EstatusVuelo VARCHAR(20),
+    PesoLimite DECIMAL(10, 2),
+    LimitePasajeros INT,
+    Pasajeros INT,
+    CONSTRAINT FK_Aviones_AeropuertoSalida FOREIGN KEY (AeropuertoSalidaId) REFERENCES Aeropuertos(AeropuertoId),
+    CONSTRAINT FK_Aviones_AeropuertoLlegada FOREIGN KEY (AeropuertoLlegadaId) REFERENCES Aeropuertos(AeropuertoId)
+);
+GO
+
+CREATE TABLE Pasajeros (
+    PasajeroId INT IDENTITY(1,1) PRIMARY KEY,
+    Nombre VARCHAR(100),
+    PesoEquipaje DECIMAL(10, 2),
+    AvionId INT
+	CONSTRAINT FK_Pasajeros_Aviones FOREIGN KEY (AvionId) REFERENCES Aviones(AvionId)
+);
+GO
