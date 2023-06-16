@@ -22,7 +22,7 @@ Antes de utilizar la API, asegúrate de configurar correctamente la cadena de co
 
 ## Script de la base de datos
 
-El script para crear la base de datos y sus tablas se encuentra en la carpeta "scriptsAerolinea". Sigue estos pasos para ejecutar el script:
+El script para crear la base de datos y sus tablas se encuentra en la carpeta "scriptsAerolinea" en el archivo "ScriptAerolinea.txt". Sigue estos pasos para ejecutar el script:
 
 1. Abre SQL Server Management Studio u otra herramienta de administración de bases de datos.
 2. Conéctate a tu instancia de SQL Server.
@@ -61,5 +61,5 @@ A continuación se detallan los endpoints disponibles en la API:
 
 Si tienes alguna pregunta o problema, no dudes en contactarme.
 
-## pd: Puede que algunas cosas no funcionen como se espera.
+<sub>pd: Puede que algunas cosas no funcionen como se espera</sub>
 
