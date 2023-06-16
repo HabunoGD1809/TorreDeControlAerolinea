@@ -16,13 +16,15 @@ namespace TorreDeControlAerolinea.Models
         public int LimitePasajeros { get; set; }
         public Aeropuerto AeropuertoSalida { get; set; }
         public Aeropuerto AeropuertoLlegada { get; set; }
+        public List<Pasajero>? Pasajeros { get; set; } // Agregamos la propiedad Pasajeros
+
     }
 
     // Modelo de datos para el pasajero
     public class Pasajero
     {
         public int PasajeroId { get; set; }
-        public string? Nombre { get; set; }
+        public string Nombre { get; set; }
         public decimal PesoEquipaje { get; set; }
         public int AvionId { get; set; }
         public Avion Avion { get; set; }
@@ -32,7 +34,7 @@ namespace TorreDeControlAerolinea.Models
     public class Aeropuerto
     {
         public int AeropuertoId { get; set; }
-        public string? Nombre { get; set; }
+        public string Nombre { get; set; }
         public int LimiteAviones { get; set; }
     }
 
